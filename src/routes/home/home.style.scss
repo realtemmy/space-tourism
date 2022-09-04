@@ -1,0 +1,42 @@
+.home-container {
+  color: #fff;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../../assets/home/background-home-desktop.jpg");
+
+  .home-content {
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+    padding-top: 20vh;
+    line-height: 1.7;
+
+    h2 {
+      font-size: 1.5rem;
+
+      span {
+        font-size: 5rem;
+        display: block;
+        text-transform: uppercase;
+        margin: 1rem 0;
+      }
+    }
+  }
+
+  .explore {
+    display: inline-block;
+    padding: 4rem 3rem;
+    border-radius: 50%;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #fff;
+    justify-self: center;
+    color: black;
+    position: relative;
+  }
+}

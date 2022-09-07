@@ -103,7 +103,7 @@
   .destination-container {
     // font-size: 14px;
 
-    .title{
+    .title {
       margin: 10% auto;
     }
 
@@ -121,23 +121,42 @@
           }
         }
       }
-       .right {
-
-        .links{
+      .right {
+        .links {
           width: 80%;
           margin: 0 auto;
         }
-        
-        .base-text *{
-          margin: .5rem 0;
+
+        .base-text * {
+          margin: 0.5rem 0;
         }
-       }
+      }
     }
   }
 }
 // 768px
-@media (max-width: 768px){
-  .destination-container{
-    background: url('../../assets/destination/background-destination-tablet.jpg') cover;
+@media (max-width: 768px) {
+  .destination-container {
+    background: url("../../assets/destination/background-destination-tablet.jpg")
+      cover;
+  }
+}
+// 525px
+@media (max-width: 525px) {
+  .destination-container {
+    .content {
+      .left {
+        .image-container {
+          img {
+            width: 50%;
+          }
+        }
+      }
+    }
+
+    .base-text {
+      display: flex;
+      flex-direction: column;
+    }
   }
 }

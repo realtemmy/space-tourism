@@ -10,17 +10,16 @@ import { useState } from "react";
 
 const Navigation = () => {
   // const { toggleState, setToggleState } = useContext(DataContext)
-  const toggleDefault = ()=>{
+  const toggleDefault = () => {
     if (window.innerWidth < 525) {
       return false;
     } else {
       return true;
     }
-  }
+  };
   // console.log(toggleDefault());
 
-  const [ toggleState, setToggleState ] = useState(toggleDefault);
-  
+  const [toggleState, setToggleState] = useState(toggleDefault);
 
   const links = [
     {
@@ -45,21 +44,10 @@ const Navigation = () => {
     },
   ];
 
-
   // console.log('this is window width', window.innerWidth);
-  window.addEventListener('resize', () => {
-     window.innerWidth > 525 ? setToggleState(true) : setToggleState(false);
-  })
-
-  // window.innerWidth > 525 ? setToggleState(false) : setToggleState(true)
-  // useEffect(() => {
-  //   console.log(windowWidth);
-  //   if (windowWidth >= 525) {
-  //     setToggleState(true);
-  //   } else {
-  //     setToggleState(false);
-  //   }
-  // }, [windowWidth]);
+  window.addEventListener("resize", () => {
+    window.innerWidth > 525 ? setToggleState(true) : setToggleState(false);
+  });
 
   return (
     <Fragment>
@@ -67,11 +55,15 @@ const Navigation = () => {
         <div className="logo-container">
           <Logo className="logo" />
         </div>
-        <div className="toggle-container" onClick={() => setToggleState(!toggleState)}>
-          {
-            !toggleState ? <Hamburger className="hamburger" /> :<CloseBtn className="close-btn" />
-          }
-          
+        <div
+          className="toggle-container"
+          onClick={() => setToggleState(!toggleState)}
+        >
+          {!toggleState ? (
+            <Hamburger className="hamburger" />
+          ) : (
+            <CloseBtn className="close-btn" />
+          )}
         </div>
         <div className={toggleState ? "nav-links" : ""}>
           {toggleState &&

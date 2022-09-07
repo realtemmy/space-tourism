@@ -117,10 +117,29 @@
       .image-container{
         order: -1;
         img{
-          height: 400px;
+          height: 300px;
           width: 100%;
           object-fit: cover;
           object-position: center center;
+        }
+      }
+    }
+  }
+}
+// 525px
+@media (max-width:525px) {
+  .tech-container{
+    .title{
+      margin: 0 auto;
+      text-align: center;
+    }
+    .tech-content{
+      .text-container{
+        gap: 0;
+        .num-links{
+          .num-link, .active{
+            margin: 0 .5rem;
+          }
         }
       }
     }

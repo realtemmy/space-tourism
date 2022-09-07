@@ -86,6 +86,10 @@
       .pages{
         width: 30%;
         margin: 0 auto;
+
+        .page, .active{
+          margin-right: .5rem;
+        }
       }
 
       .image-container {
@@ -101,5 +105,39 @@
 @media (max-width: 768px) {
   .crew-container{
     background: url('../../assets/crew/background-crew-tablet.jpg') cover;
+  }
+}
+// 525px
+@media (max-width: 525px) {
+  .crew-container{
+
+    .container{
+      margin: 0 auto;
+      position: relative;
+
+      .image-container{
+        order: -1;
+        border-bottom: 1px solid rgb(255, 255, 255, .3);
+        img{
+          margin-top: 4rem;
+          width: 70%;
+        }
+      }
+      .text-container{
+        display: flex;
+        flex-direction: column;
+
+        .title{
+          position: absolute;
+          top: 0;
+          left: 15%;
+          width: 70%;
+          text-align: center;
+        }
+        .pages{
+          order: -1;
+        }
+      }
+    }
   }
 }

@@ -32,6 +32,9 @@ const Crew = () => {
     <div className="crew-container">
       <Navigation />
       <div className="container">
+        {/* <h2 className="title">
+          <span>02 </span> Meet your crew
+        </h2> */}
         <div className="text-container">
           <h2 className="title">
             <span>02 </span> Meet your crew
@@ -41,7 +44,12 @@ const Crew = () => {
           <p className="bio">{bio}</p>
           <div className="pages">
             {crewPages.map((page, idx) => (
-              <CrewDirectory key={idx} page={page} idx={idx} pages={crewPages} />
+              <CrewDirectory
+                key={idx}
+                page={page}
+                idx={idx}
+                pages={crewPages}
+              />
             ))}
           </div>
         </div>

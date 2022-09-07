@@ -85,6 +85,9 @@
       display: block;
       z-index: 3;
       cursor: pointer;
+      position: absolute;
+      right: 0;
+      top: 2rem;
       
       .close-btn {
         display: block;

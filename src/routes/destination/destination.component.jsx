@@ -1,12 +1,12 @@
 import { useContext } from "react";
-import Navigation from "../../components/navigation/navigation.component";
 import { DataContext } from "../../contexts/data-context";
+import DestinationDirectory from "../../components/destination-directory/destination-directory.component";
+import Navigation from "../../components/navigation/navigation.component";
 
 import "./destination.style.scss";
 
 const Destination = () => {
-  const { destinationCount, setDestinationCount, destinationData } =
-    useContext(DataContext);
+  const { destinationCount, destinationData } = useContext(DataContext);
 
   const { name, description, distance, travel, images } =
     destinationData[destinationCount];
@@ -14,7 +14,7 @@ const Destination = () => {
   const destPages = [
     {
       name: "Moon",
-      isActive: true,
+      isActive: false,
     },
     {
       name: "Mars",
@@ -46,13 +46,12 @@ const Destination = () => {
           <div className="links">
             {destPages.map((page, idx) => {
               return (
-                <div
-                  className={page.isActive ? "active" : "link"}
+                <DestinationDirectory
                   key={idx}
-                  onClick={() => setDestinationCount(idx)}
-                >
-                  {page.name}
-                </div>
+                  page={page}
+                  idx={idx}
+                  pages={destPages}
+                />
               );
             })}
           </div>

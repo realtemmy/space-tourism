@@ -2,13 +2,32 @@ import { useContext } from "react";
 import { DataContext } from "../../contexts/data-context";
 
 import Navigation from "../../components/navigation/navigation.component";
+import CrewDirectory from "../../components/crew-directory/crew-directory.component";
 import "./crew.style.scss";
 
 const Crew = () => {
-  const { crewCount, setCrewCount, crewData } = useContext(DataContext);
+  const { crewCount, crewData } = useContext(DataContext);
 
   const { name, role, bio, images } = crewData[crewCount];
 
+  const crewPages = [
+    {
+      id: 0,
+      isActive: false,
+    },
+    {
+      id: 1,
+      isActive: false,
+    },
+    {
+      id: 2,
+      isActive: false,
+    },
+    {
+      id: 3,
+      isActive: false,
+    },
+  ];
   return (
     <div className="crew-container">
       <Navigation />
@@ -21,10 +40,9 @@ const Crew = () => {
           <div className="name">{name}</div>
           <p className="bio">{bio}</p>
           <div className="pages">
-            <div className="page" onClick={() => setCrewCount(0)}></div>
-            <div className="page" onClick={() => setCrewCount(1)}></div>
-            <div className="page" onClick={() => setCrewCount(2)}></div>
-            <div className="page" onClick={() => setCrewCount(3)}></div>
+            {crewPages.map((page, idx) => (
+              <CrewDirectory key={idx} page={page} idx={idx} pages={crewPages} />
+            ))}
           </div>
         </div>
         <div className="image-container">

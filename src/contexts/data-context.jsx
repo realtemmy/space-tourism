@@ -11,7 +11,7 @@ export const DataContext = createContext({
   crewCount: 0,
   setCrewCount: ()=>{},
   techCount: 0,
-  setTechCount: ()=>{}
+  setTechCount: ()=>{},
 });
 
 
@@ -24,9 +24,6 @@ export const DataProvider = ({children}) =>{
     const [destinationCount, setDestinationCount] = useState(0);
     const [crewCount, setCrewCount] = useState(0);
     const [techCount, setTechCount] = useState(0);
-    // const [activeClass, setActiveClass] = useState({activeObject: null})
-
-    // console.log(techData)
 
     const value = {
       destinationData,
@@ -37,7 +34,7 @@ export const DataProvider = ({children}) =>{
       crewCount,
       setCrewCount,
       techCount,
-      setTechCount
+      setTechCount,
     };
 
     return <DataContext.Provider value={value}>{ children }</DataContext.Provider>

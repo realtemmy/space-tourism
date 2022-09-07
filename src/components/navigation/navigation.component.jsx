@@ -10,7 +10,16 @@ import { useState } from "react";
 
 const Navigation = () => {
   // const { toggleState, setToggleState } = useContext(DataContext)
-  const [ toggleState, setToggleState ] = useState(false);
+  const toggleDefault = ()=>{
+    if (window.innerWidth < 525) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+  // console.log(toggleDefault());
+
+  const [ toggleState, setToggleState ] = useState(toggleDefault);
   
 
   const links = [
